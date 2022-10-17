@@ -1,0 +1,48 @@
+﻿<Window x:Class="MovieInfoDZ.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieInfoDZ"
+        xmlns:mD="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MusicInfo" Height="500" Width="800">
+    <Grid>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Column="0" Name="search_box"/>
+                <Button  Click ="search_btn_Click" Grid.Column="1" Name ="search_btn" Style="{StaticResource MaterialDesignFlatDarkBgButton}">
+                    <mD:PackIcon Kind="Search"/>
+                </Button>
+            </Grid>
+            <ListBox SelectionChanged="result_listbox_SelectionChanged" Name="result_listbox" Grid.Row="1"/>
+        </Grid>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Image Height="250px" Width="200px" Name="image_box"/>
+            <Label FontSize="28px" Content="Title" Name="title_lbl"/>
+            <Label FontSize="28px" Content="Year" Name="year_lbl"/>
+            <Label FontSize="28px" Content="imdbID" Name="imdb_lbl"/>
+            <Label FontSize="28px"  Content="Type" Name="type_lbl"/>
+
+        </StackPanel>
+
+
+    </Grid>
+</Window>
